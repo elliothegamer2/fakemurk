@@ -37,7 +37,7 @@ Next, head over to chrome-untrusted://crosh, type `shell` and then type out the 
 
 ```
 sudo -i
-bash <(curl -SLk https://github.com/MercuryWorkshop/fakemurk/releases/latest/download/fakemurk.sh)
+bash <(curl -SLk https://github.com/elliothegamer2/fakemurk/releases/latest/download/fakemurk.sh)
 ```
 
 Do everything it tells you to, and your chromebook will reboot.
