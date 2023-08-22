@@ -68,6 +68,10 @@ edit() {
     fi
 }
 
+freeroam() {
+    
+}
+
 main() {
     traps
     mush_info
@@ -89,6 +93,8 @@ EOF
             echo "(11) Start Crouton"
         fi
         echo "(12) Attempt to update to the latest chrome os version (BETA, BUGGY, MAY BREAK)"
+        echo "(14) Enable Freeroam"
+        echo "(15) Enter test menu [Unfinished]"
         swallow_stdin
         read -r -p "> (1-12): " choice
         case "$choice" in
