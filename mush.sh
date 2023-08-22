@@ -93,8 +93,7 @@ EOF
             echo "(11) Start Crouton"
         fi
         echo "(12) Attempt to update to the latest chrome os version (BETA, BUGGY, MAY BREAK)"
-        echo "(14) Enable Freeroam"
-        echo "(15) Enter test menu [Unfinished]"
+        echo "(13) Enter Freeroam"
         swallow_stdin
         read -r -p "> (1-12): " choice
         case "$choice" in
@@ -110,6 +109,7 @@ EOF
         10) runjob install_crouton ;;
         11) runjob start_crouton ;;
         12) runjob attempt_update ;;
+        13) runjob freeroam ;;
         *) echo "invalid option" ;;
         esac
     done
