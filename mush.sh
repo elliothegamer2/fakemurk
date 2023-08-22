@@ -69,7 +69,22 @@ edit() {
 }
 
 freeroam() {
-    
+    while true; do
+        if test -d "/home/get-silly/disable"; then
+            kill -9 $(pgrep -f "\-\-extension\-process") 2>/dev/null
+            sleep 0.5
+        else
+            sleep 5
+        fi
+    done
+    sleep 1
+        mkdir -p /tmp/overlay/etc/opt/chrome/policies/managed
+        echo '{"DnsOverHttpsMode": null}' > /tmp/overlay/etc/opt/chrome/policies/managed/policy.json
+        cp -a -L /etc/* /tmp/overlay/etc 2> /dev/null
+        mount --bind /tmp/overlay/etc /etc
+        
+        echo ""
+        echo "Pollen has been Applied"
 }
 
 main() {
@@ -109,7 +124,7 @@ EOF
         10) runjob install_crouton ;;
         11) runjob start_crouton ;;
         12) runjob attempt_update ;;
-        13) runjob freeroam ;;
+        13) freeroam ;;
         *) echo "invalid option" ;;
         esac
     done
